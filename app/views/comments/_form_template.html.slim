@@ -1,3 +1,9 @@
+- if @article.errors.any?
+  #error_explanation
+    h2
+      / pluralizeメソッドは、複数形のとき 2 errors などと直して出力する便利なメソッド
+      |  occured! （エラー発生）
+
 = form_for([@article, @article.comments.build]) do |f|
 
   p 

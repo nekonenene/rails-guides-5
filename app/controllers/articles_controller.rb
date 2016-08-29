@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 
   def new # 作成処理は create が担当
     @article = Article.new
+    @comment = Comment.new
   end
 
   def create
