@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   def new
+    @article = Article.new
   end
 
   def create
@@ -11,7 +12,12 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     @article.save # DB に保存
-    redirect_to @article
+
+    if @article.save # validation を満たせば true
+      redirect_to @article
+    else
+      render 'new'
+    end
   end
 
   def show
