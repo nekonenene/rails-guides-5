@@ -2,28 +2,6 @@ h1
   | EDIT : 
   = @article.title
 
-- if @article.errors.any?
-  #error_explanation
-    h2
-      / pluralizeメソッドは、複数形のとき 2 errors などと直して出力する便利なメソッド
-      = pluralize(@article.errors.count, "error")
-      |  occured! （エラー発生）
-    ul
-      - @article.errors.full_messages.each do |msg|
-        li = msg
-
-= form_for :article, url: articles_path(@article), method: :patch do |f|
-  p
-    = f.label :title
-    br
-    = f.text_field :title
-
-  p
-    = f.label :text
-    br
-    = f.text_area :text
-
-  p
-    = f.submit
+= render 'form_template'
 
 = link_to 'Back to Index', articles_path

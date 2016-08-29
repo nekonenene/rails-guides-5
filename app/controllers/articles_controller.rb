@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
-  def new
+  def new # 作成処理は create が担当
     @article = Article.new
   end
 
@@ -28,8 +28,18 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  def edit
+  def edit # 更新処理は update が担当
     @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
   end
 
 end
