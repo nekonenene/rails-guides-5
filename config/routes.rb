@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :articles
   # index, create, new, edit, show, update, destroy すべて作られる
+  resources :articles do
+    resources :comments
+  end
 
 end
