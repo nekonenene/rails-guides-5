@@ -1,0 +1,11 @@
+h1 Listing articles
+
+table border=2
+  tr
+    th Title
+    th Text
+
+  - @articles.each do |article|
+    tr
+      td = article.title
+      td = article.text
