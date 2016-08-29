@@ -27,16 +27,4 @@ br
 
   h2 コメントを書く
 
-  = form_for([@article, @article.comments.build]) do |f|
-
-    p 
-      = f.label :commenter
-      br
-      = f.text_field :commenter
-
-    p 
-      = f.label :body
-      br
-      = f.text_area :body
-
-    p = f.submit
+  = render "comments/form_template"
