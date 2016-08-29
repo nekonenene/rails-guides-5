@@ -23,6 +23,11 @@ br
       strong Comment:
       br
       = comment.body
+    
+    p 
+      = link_to 'コメントを削除', [comment.article, comment],
+        method: :delete,
+        data: {confirm: '削除してよろしいですか？'}
 
 
   h2 コメントを書く
