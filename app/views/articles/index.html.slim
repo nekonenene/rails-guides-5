@@ -4,11 +4,14 @@ table border=2
   tr
     th Title
     th Text
+    th colspan=2 操作
 
   - @articles.each do |article|
     tr
       td = article.title
       td = article.text
+      td = link_to '表示', article_path(article)
+      td = link_to '編集', edit_article_path(article)
 
 br
 
