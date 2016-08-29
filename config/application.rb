@@ -9,6 +9,6 @@ Bundler.require(*Rails.groups)
 module RailsGuideBlog
   class Application < Rails::Application
     # rails generate のときに slim ファイルが作られるようになる
-    config.generators.template_engine = :slimbundle
+    config.generators.template_engine = :slim
   end
 end
