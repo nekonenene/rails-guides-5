@@ -5,7 +5,7 @@ h1 New Article
     h2
       / pluralizeメソッドは、複数形のとき 2 errors などと直して出力する便利なメソッド
       = pluralize(@article.errors.count, "error")
-      | occured! （エラー発生）
+      |  occured! （エラー発生）
     ul
       - @article.errors.full_messages.each do |msg|
         li = msg
